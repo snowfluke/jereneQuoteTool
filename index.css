@@ -315,6 +315,10 @@ option[value=""][disabled] {
 	.att {
 		grid-template-columns: 1fr;
 	}
+	
+	.modal .modal-content  {
+		width: auto;
+	}
 }
 
 @media screen and (max-width: 480px) {
