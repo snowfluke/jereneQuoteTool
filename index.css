@@ -317,7 +317,7 @@ option[value=""][disabled] {
 	}
 	
 	.modal .modal-content  {
-		width: auto;
+		width: 100vw;
 	}
 }
 
