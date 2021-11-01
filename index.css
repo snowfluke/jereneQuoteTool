@@ -1,0 +1,325 @@
+body {
+	background-color: dodgerblue;
+	font-size: 1rem;
+	color: #fff;
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 00.5rem 1rem;
+	margin: 0;
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	align-items: center;
+}
+
+a {
+	color: #fff;
+	font-weight: bold;
+}
+
+#work {
+	border: 1px solid #fff;
+	border-radius: 5px;
+	margin: 15px 0;
+	width: 80%;
+	height: auto;
+	padding: 20px 50px;
+	min-height: 250px;
+	justify-content: center;
+}
+
+#work #app {
+	display: grid;
+	grid-template-areas:
+		"q q a a"
+		"q q t t"
+		"at at s s";
+	gap: 3px 3px;
+}
+
+.edit {
+	display: grid;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	grid-template-columns: 1fr 1fr;
+}
+
+.editStatus {
+	text-align: center;
+	display: none;
+	font-weight: bold;
+	color: rgb(126, 0, 0);
+}
+
+p {
+	text-align: center;
+}
+
+.qq {
+	grid-area: q;
+	display: grid;
+}
+
+.aa {
+	grid-area: a;
+	display: grid;
+	grid-template-columns: 3fr 1fr;
+}
+
+.tt {
+	grid-area: t;
+	display: grid;
+}
+
+.at {
+	grid-area: at;
+	display: grid;
+}
+
+.att {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+}
+
+.ttt {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.ss {
+	grid-area: s;
+	width: 100%;
+	display: grid;
+}
+
+.quoteText {
+	margin: 0.5rem;
+	outline: none;
+	resize: none;
+	padding: 1rem;
+	font-size: 1rem;
+	border: 0;
+	color: rgb(83, 83, 83);
+	border-radius: 10px;
+	max-width: 100%;
+	height: 100px;
+}
+
+#app input,
+#app select,
+#app select option {
+	margin: 0.5rem;
+	border-radius: 10px;
+	max-width: 100%;
+	color: rgb(83, 83, 83);
+	outline: none;
+	font-size: 1rem;
+	border: 1px solid #ebe2e2;
+	padding: 1rem;
+}
+
+.editQuote {
+	border-radius: 10px;
+	max-width: 100%;
+	background-color: dodgerblue;
+	color: white;
+	outline: none;
+	font-size: 1rem;
+	padding: 0.1rem 0.5rem;
+	border: 1px solid #ebe2e2;
+}
+
+.line {
+	width: 60%;
+	border-radius: 5px;
+	align-self: center;
+	border-bottom: 1px solid #fff;
+	margin: 10px 0;
+}
+
+.action {
+	background-color: #446b91 !important;
+}
+
+.colored {
+	font-weight: bold;
+	outline: none;
+	border: 1px solid #fff;
+	border-radius: 5px;
+	padding: 2.5px 10px;
+}
+
+.topBar {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.topBar > * {
+	margin: 0 5px;
+}
+
+button {
+	cursor: pointer;
+	margin: 0.5rem;
+}
+
+.item {
+	background-color: #fff;
+	padding: 10px;
+	height: 100px;
+	display: flex;
+	overflow: hidden;
+	justify-content: center;
+	align-items: center;
+	border-radius: 5px;
+}
+
+button {
+	padding: 1rem;
+	color: #fff;
+	border-radius: 10px;
+	border: 1px solid #fff;
+	background-color: Transparent;
+	outline: none;
+	font-size: 1rem;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: rgb(13, 115, 218);
+}
+
+option[value=""][disabled] {
+	display: none;
+}
+
+.modal {
+	position: fixed;
+	top: 0;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal .modal-content {
+	background-color: white;
+	width: 500px;
+	color: #020202;
+	padding: 5px;
+	display: grid;
+	grid-template-rows: 1fr 2fr 1fr;
+	grid-template-columns: 1fr;
+	border-radius: 15px;
+	justify-content: center;
+	text-align: center;
+}
+
+.modalTitle,
+.modalContent {
+	display: grid;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+}
+
+.modal-content .modalClose,
+.modalOk {
+	color: dodgerblue;
+}
+
+.modal-content .modalClose:hover,
+.modalOk:hover {
+	color: #fff;
+}
+
+.modalConfirm {
+	display: none;
+	grid-template-columns: 1fr 1fr;
+	text-align: center;
+}
+
+.modalOk,
+.modalCancel {
+	display: grid;
+	justify-content: center;
+	align-items: center;
+}
+
+.modalCancel {
+	color: tomato;
+}
+
+.modalCancel:hover {
+	background-color: tomato;
+	color: white;
+}
+
+.tooltip {
+	bottom: 100px;
+	position: fixed;
+	min-width: 100px;
+	height: 25px;
+	padding: 5px 20px;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	display: none;
+	background-color: #020202;
+	color: white;
+	border-radius: 10px;
+	opacity: 0;
+	margin: 0 auto;
+	transition: opacity 5s;
+}
+
+.normalLink {
+	color: dodgerblue;
+}
+
+.submitTags {
+	background-color: white;
+	color: rgb(83, 83, 83);
+	border: 2px solid rgb(4, 74, 145) !important;
+	font-weight: normal;
+}
+
+.submitTags:hover {
+	background-color: rgb(236, 229, 229);
+	border: 2px solid rgb(4, 74, 145) !important;
+}
+
+.newTags {
+	border: 2px solid rgb(4, 74, 145) !important;
+}
+
+@media screen and (max-width: 1000px) {
+	#work #app {
+		grid-template-areas:
+			"q q q q"
+			"a a a a"
+			"t t t t"
+			"s s s s"
+			"at at at at";
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.att {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	#work {
+		padding: none;
+		display: grid;
+	}
+}
