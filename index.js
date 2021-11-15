@@ -25,6 +25,13 @@ const saveAs = (filename, content) => {
 	document.body.removeChild(a);
 };
 
+const base64encode = str => {
+  let encode = encodeURIComponent(str).replace(/%([a-f0-9]{2})/gi, (m, $1) =>
+    String.fromCharCode(parseInt($1, 16)),
+  );
+  return btoa(encode);
+}
+
 const validate = (json) => {
 	if (!Array.isArray(json)) return "The object should be in an array";
 
@@ -260,7 +267,7 @@ const exportJSON = () => {
 	if (!Quotes) return showModal("Export Failed", "No Quotes in Localstorage");
 
 	let quotes = JSON.stringify(Quotes);
-	let content = btoa(quotes);
+	let content = base64encode(quotes);
 	let date = new Date().toLocaleString().split(",")[0].replace(/\//g, "-");
 	saveAs(`quotes-${date}.json`, `data:application/json;base64,${content}`);
 	showTooltip("Quotes exported");
